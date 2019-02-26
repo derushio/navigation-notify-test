@@ -4,6 +4,7 @@ ARG NODE_ENV
 RUN apt update
 RUN apt install -y rsync
 RUN npm install -g yarn
+RUN yarn config set network-timeout 1000000
 
 ENV SV_FRONTEND_DIR "/opt/frontend"
 ADD "./" "$SV_FRONTEND_DIR/"
