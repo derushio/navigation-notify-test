@@ -1,0 +1,19 @@
+version: '3'
+services:
+  front:
+    build:
+      context: front
+      args:
+        - NODE_ENV=production
+    ports:
+      - 8080
+
+  portal:
+    image: steveltn/https-portal:latest
+    ports:
+      - '443:443'
+    environment:
+      STAGE: production
+      DOMAINS: 'derushio.work -> http://front:8080/'
+    links:
+      - front
