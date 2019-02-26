@@ -11,7 +11,14 @@ WORKDIR "$SV_FRONTEND_DIR"
 RUN yarn install --production=false
 RUN yarn build
 
-# --------------------------------------------------------------
+ENV SV_WEBAPP_DIR "/opt/webapp"
+ADD "./webapp/" "$SV_WEBAPP_DIR/"
+WORKDIR "$SV_WEBAPP_DIR"
+RUN if [ "$NODE_ENV" != "development" ]; then \
+    yarn install --production=false && \
+    yarn build && \
+    rsync -avh "./dist/" "$SV_FRONTEND_DIR/public/"; \
+fi
 
 FROM node:10-alpine
 ENV SV_FRONTEND_DIR "/opt/frontend"
