@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "express": "^4.16.4",
+        "lodash": "^4.17.11",
         "rimraf": "^2.6.3",
         "typescript": "^3.3.3"
     },
@@ -28,11 +29,11 @@
         "dotenv": "^6.2.0",
         "source-map-support": "^0.5.10",
         "ts-loader": "^5.3.3",
-        "tslint-loader": "^3.6.0",
         "tslint": "^5.12.1",
+        "tslint-loader": "^3.6.0",
         "typedoc": "^0.14.2",
+        "webpack": "^4.29.3",
         "webpack-cli": "^3.2.3",
-        "webpack-node-externals": "^1.7.2",
-        "webpack": "^4.29.3"
+        "webpack-node-externals": "^1.7.2"
     }
 }
