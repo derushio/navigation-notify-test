@@ -12,7 +12,6 @@
     },
     "dependencies": {
         "express": "^4.16.4",
-        "loadash": "^1.0.0",
         "rimraf": "^2.6.3",
         "typescript": "^3.3.3"
     },
